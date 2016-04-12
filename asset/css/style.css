@@ -601,7 +601,6 @@ ul.resource-list .resource img ~ * {
 /* line 530, sass/_screen.scss */
 .media-render > * {
   max-width: 100%;
-  height: auto;
 }
 
 /* @end */
