@@ -255,36 +255,27 @@ header nav ul li {
 .left .item.resource,
 .right .item.resource {
     margin: 0 0 rhythm() 0;
-    display: table;
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+    max-width: 40vw;
 
     .media-render a {
         vertical-align: top;
     }
 
-    .media-render ~ * {
-        display: table-caption;
-        caption-side: bottom;
+    .media-render > *, img {
+        max-width: 40vw;
     }
 
     img {
-        max-width: 100%;
         vertical-align: top;
         margin-bottom: rhythm(.5);
-    }
-
-    & > a:first-child ~ * {
-        display: table-caption;
-        caption-side: bottom;
     }
 }
 
 .left:not(.file) .item.resource,
 .right:not(.file) .item.resource {
-    max-width: 50%;
-}
-
-.left.file,
-.right.file {
     max-width: 50%;
 }
 
@@ -309,11 +300,6 @@ header nav ul li {
 .square .item.resource > h3 {
     font-size: $base-font-size;
     line-height: $base-line-height;
-}
-
-.left .item.resource > h3,
-.right .item.resource > h3 {
-    margin: 0;
 }
 
 .left .item.resource + p,
