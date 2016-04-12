@@ -6,7 +6,6 @@ $this->headTitle($this->setting('installation_title', 'Omeka S'))->setSeparator(
 $this->headLink()->prependStylesheet($this->assetUrl('css/style.css'));
 $this->headLink()->prependStylesheet($this->assetUrl('css/iconfonts.css', 'Omeka'));
 $this->headLink()->prependStylesheet('//fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic|Bitter:700');
-$this->headScript()->prependFile($this->assetUrl('js/default.js'));
 $this->headScript()->prependFile($this->assetUrl('js/jquery.js', 'Omeka'));
 $this->trigger('view.layout');
 ?>
