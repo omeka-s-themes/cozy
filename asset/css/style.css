@@ -327,54 +327,42 @@ header nav ul li {
 .left.file {
   float: left;
   clear: left;
+  margin-right: 1.5em;
 }
 
-/* line 296, sass/_screen.scss */
+/* line 297, sass/_screen.scss */
 .right.file {
   float: right;
   clear: right;
-}
-
-/* line 301, sass/_screen.scss */
-.left .item.resource {
-  float: left;
-  margin-right: 1.5em;
-  clear: left;
-}
-
-/* line 307, sass/_screen.scss */
-.right .item.resource {
-  float: right;
   margin-left: 1.5em;
-  clear: right;
 }
 
-/* line 313, sass/_screen.scss */
+/* line 303, sass/_screen.scss */
 .left .item.resource > a:first-child,
 .right .item.resource > a:first-child {
   vertical-align: top;
 }
 
-/* line 318, sass/_screen.scss */
+/* line 308, sass/_screen.scss */
 .medium .item.resource > h3,
 .square .item.resource > h3 {
   font-size: 16px;
   line-height: 24px;
 }
 
-/* line 324, sass/_screen.scss */
+/* line 314, sass/_screen.scss */
 .left .item.resource > h3,
 .right .item.resource > h3 {
   margin: 0;
 }
 
-/* line 329, sass/_screen.scss */
+/* line 319, sass/_screen.scss */
 .left .item.resource + p,
 .right .item.resource + p {
   margin-top: 0;
 }
 
-/* line 334, sass/_screen.scss */
+/* line 324, sass/_screen.scss */
 .break {
   width: 100%;
   clear: both;
@@ -383,23 +371,23 @@ header nav ul li {
   padding-bottom: -0.0625em;
   margin: 1.5em 0;
 }
-/* line 340, sass/_screen.scss */
+/* line 330, sass/_screen.scss */
 .break.transparent {
   border-color: transparent;
 }
-/* line 344, sass/_screen.scss */
+/* line 334, sass/_screen.scss */
 .break.opaque {
   border-color: rgba(0, 0, 0, 0.08);
 }
 
-/* line 349, sass/_screen.scss */
+/* line 339, sass/_screen.scss */
 .preview-block {
   margin: 1.5em 0;
   overflow: hidden;
   clear: both;
 }
 
-/* line 355, sass/_screen.scss */
+/* line 345, sass/_screen.scss */
 .resource-list.preview + a {
   background-color: #000;
   text-align: center;
@@ -410,66 +398,66 @@ header nav ul li {
   display: inline-block;
   font-weight: bold;
 }
-/* line 365, sass/_screen.scss */
+/* line 355, sass/_screen.scss */
 .resource-list.preview + a:hover {
   background-color: #9E0000;
   color: #fff;
   border-bottom-width: 0px;
 }
 
-/* line 372, sass/_screen.scss */
+/* line 362, sass/_screen.scss */
 .resource-list .resource > *:only-child {
   margin-bottom: 0;
 }
 
-/* line 376, sass/_screen.scss */
+/* line 366, sass/_screen.scss */
 .toc-block > ul {
   margin: 2em 0;
   list-style-type: none;
   border-left: 5px solid #eee;
 }
 
-/* line 382, sass/_screen.scss */
+/* line 372, sass/_screen.scss */
 .toc-block > ul > li {
   margin-bottom: 0.75em;
 }
 
-/* line 386, sass/_screen.scss */
+/* line 376, sass/_screen.scss */
 .toc-block > ul > li > a {
   font-weight: bold;
 }
 
-/* line 390, sass/_screen.scss */
+/* line 380, sass/_screen.scss */
 .toc-block ul ul {
   list-style-type: none;
   padding-left: 0;
 }
 
-/* line 395, sass/_screen.scss */
+/* line 385, sass/_screen.scss */
 .toc-block ul ul ul {
   padding-left: 1.25em;
 }
 
-/* line 399, sass/_screen.scss */
+/* line 389, sass/_screen.scss */
 .toc-block ul ul li:before {
   content: "\2014";
   color: rgba(0, 0, 0, 0.08);
 }
 
-/* line 404, sass/_screen.scss */
+/* line 394, sass/_screen.scss */
 .site-page-pagination {
   clear: both;
 }
 
 /* @end */
 /* @group ----- Resource List ----- */
-/* line 412, sass/_screen.scss */
+/* line 402, sass/_screen.scss */
 ul.resource-list {
   list-style-type: none;
   padding-left: 0;
 }
 
-/* line 417, sass/_screen.scss */
+/* line 407, sass/_screen.scss */
 ul.resource-list .resource {
   border-color: rgba(0, 0, 0, 0.08);
   border-bottom-width: 0.0625em;
@@ -479,18 +467,18 @@ ul.resource-list .resource {
   overflow: hidden;
   position: relative;
 }
-/* line 424, sass/_screen.scss */
+/* line 414, sass/_screen.scss */
 ul.resource-list .resource > *:last-child {
   margin-bottom: 0;
 }
-/* line 428, sass/_screen.scss */
+/* line 418, sass/_screen.scss */
 ul.resource-list .resource:first-child {
   border-top-width: 0.0625em;
   border-top-style: solid;
   padding-top: 1.4375em;
 }
 
-/* line 433, sass/_screen.scss */
+/* line 423, sass/_screen.scss */
 ul.resource-list .resource img {
   height: auto;
   width: 6em;
@@ -498,18 +486,18 @@ ul.resource-list .resource img {
   margin-left: 0.75em;
 }
 
-/* line 440, sass/_screen.scss */
+/* line 430, sass/_screen.scss */
 ul.resource-list .resource h4 {
   margin-top: 0;
 }
 
-/* line 444, sass/_screen.scss */
+/* line 434, sass/_screen.scss */
 ul.resource-list .resource .description {
   max-height: 6em;
   overflow: hidden;
   position: relative;
 }
-/* line 449, sass/_screen.scss */
+/* line 439, sass/_screen.scss */
 ul.resource-list .resource .description:after {
   content: "";
   position: absolute;
@@ -520,14 +508,14 @@ ul.resource-list .resource .description:after {
   background: linear-gradient(to top, #ffffff, rgba(255, 255, 255, 0));
 }
 
-/* line 460, sass/_screen.scss */
+/* line 450, sass/_screen.scss */
 ul.resource-list .resource img ~ * {
   width: calc(100% - 6.75em);
 }
 
 /* @end */
 /* @group ----- Resource/Show ----- */
-/* line 468, sass/_screen.scss */
+/* line 458, sass/_screen.scss */
 .resource.show #content > h2:first-of-type {
   margin-bottom: 0;
   display: block;
@@ -536,7 +524,7 @@ ul.resource-list .resource img ~ * {
   word-break: break-word;
 }
 
-/* line 476, sass/_screen.scss */
+/* line 466, sass/_screen.scss */
 .resource.show #content > h2 + h3 {
   font-family: "Lora", serif;
   font-size: 16px;
@@ -552,14 +540,14 @@ ul.resource-list .resource img ~ * {
   text-align: right;
 }
 
-/* line 491, sass/_screen.scss */
+/* line 481, sass/_screen.scss */
 .resource.show .property {
   margin-bottom: 1.5em;
   text-align: right;
   clear: both;
 }
 
-/* line 497, sass/_screen.scss */
+/* line 487, sass/_screen.scss */
 .resource.show .property h4 {
   width: 18.36735%;
   display: inline-block;
@@ -569,14 +557,14 @@ ul.resource-list .resource img ~ * {
   word-break: break-all;
 }
 
-/* line 506, sass/_screen.scss */
+/* line 496, sass/_screen.scss */
 .resource.show .property .value {
   width: 79.59184%;
   display: inline-block;
   vertical-align: top;
   text-align: left;
 }
-/* line 512, sass/_screen.scss */
+/* line 502, sass/_screen.scss */
 .resource.show .property .value:not(:first-of-type) {
   border-color: #eee;
   border-top-width: 0.0625em;
@@ -585,7 +573,7 @@ ul.resource-list .resource img ~ * {
   margin-top: 0.375em;
 }
 
-/* line 519, sass/_screen.scss */
+/* line 509, sass/_screen.scss */
 .resource.show .media-list,
 .media.resource.show .media-render {
   width: 79.59184%;
@@ -593,7 +581,7 @@ ul.resource-list .resource img ~ * {
   margin: 1.5em 0;
 }
 
-/* line 526, sass/_screen.scss */
+/* line 516, sass/_screen.scss */
 .media-render > * {
   max-width: 100%;
 }
