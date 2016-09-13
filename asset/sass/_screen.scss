@@ -21,24 +21,24 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: 2 * $base-font-size;
-    margin: rhythm(.5, 2 * $base-font-size) 0;
+    margin: $spacing-m 0;
     line-height: 2 * $base-line-height;
 }
 
 h2 {
     font-size: 1.75 * $base-font-size;
-    margin: rhythm(.5, 1.75 * $base-font-size) 0;
+    margin: $spacing-m 0;
     line-height: 2 * $base-line-height;
 }
 
 h3 {
     font-size: 1.5 * $base-font-size;
-    margin: rhythm(.5, 1.5 * $base-font-size) 0;
+    margin: $spacing-m 0;
 }
 
 h4 {
     font-size: 1.25 * $base-font-size;
-    margin: rhythm(.5, 1.25 * $base-font-size) 0;
+    margin: $spacing-m 0;
 }
 
 a {
@@ -72,8 +72,8 @@ input[type="datetime-local"] {
     font-family: "Lora", serif;
     font-size: $base-font-size;
     line-height: $base-line-height;
-    border-color: #e7e7e7;
-    @include rhythm-borders(1px, .25, $base-font-size, solid);
+    border: 1px solid #e7e7e7;
+    padding: $spacing-s - 1px;
 }
 
 input[type="submit"],
@@ -81,7 +81,7 @@ button,
 .button {
     background-color: #000;
     text-align: center;
-    padding: rhythm(.25);
+    padding: $spacing-s;
     border-radius: 2px;
     color: $gray;
     line-height: $base-line-height;
@@ -124,7 +124,7 @@ nav ul {
 
 .pagination form {
     display: inline-block;
-    margin-right: rhythm();
+    margin-right: $spacing-l;
 }
 
 /* @end */
@@ -132,7 +132,8 @@ nav ul {
 /* @group ----- Header ----- */
 
 header {
-    @include container;
+    max-width: 960px;
+    margin: 0 auto;
     color: #e7e7e7;
     position: relative;
 
@@ -154,7 +155,7 @@ header a:visited {
 }
 
 header {
-    padding: 0 rhythm();
+    padding: 0 $spacing-l;
 }
 
 header .site-title {
@@ -173,8 +174,16 @@ header nav ul li {
     display: inline-block;
 }
 
+header nav ul {
+    padding-left: 0;
+}
+
 header nav ul li {
     margin: 0 1em;
+}
+
+header nav ul li ul {
+    display: none;
 }
 
 /* @end */
@@ -182,15 +191,16 @@ header nav ul li {
 /* @group ----- Page and Blocks ----- */
 
 #content {
-    @include container;
-    padding: 0 rhythm() rhythm();
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 $spacing-l $spacing-l;
 }
 
 .item-showcase {
-    margin: rhythm() 0;
-    border-color: $light;
-    @include leading-border(1px, 1, $base-font-size, solid);
-    @include trailing-border(1px, 0, $base-font-size, solid);
+    margin: $spacing-l 0;
+    border-top: 1px solid $light;
+    border-bottom: 1px solid $light;
+    padding: ($spacing-s - 1px) 0 0;
     overflow: hidden;
     text-align: center;
     clear: both;
@@ -201,7 +211,7 @@ header nav ul li {
     line-height: $base-line-height;
 
     * {
-        margin: 0 0 rhythm(1, .75 * $base-font-size) 0;
+        margin: 0 0 $spacing-l 0;
     }
 
     & > *:last-child {
@@ -214,11 +224,11 @@ header nav ul li {
     vertical-align: top;
 
     &:not(:last-child) {
-        margin-bottom: rhythm();
+        margin-bottom: $spacing-l;
     }
 
     img {
-        margin-right: rhythm(.5);
+        margin-right: $spacing-m;
     }
 
     &:only-child img {
@@ -235,11 +245,11 @@ header nav ul li {
         clear: left;
         font-size: .75 * $base-font-size;
         line-height: $base-line-height;
-        margin: rhythm(.5, .75 * $base-font-size) 0 0;
+        margin: $spacing-m 0 0;
     }
 
     &:not(:only-child) img {
-        max-height: rhythm(7);
+        max-height: 7 * $spacing-l;
         width: auto;
         float: none;
         margin-right: 0;
@@ -254,7 +264,7 @@ header nav ul li {
 
 .left .item.resource,
 .right .item.resource {
-    margin: 0 0 rhythm() 0;
+    margin: 0 0 $spacing-l 0;
     width: -webkit-min-content;
     width: -moz-min-content;
     width: min-content;
@@ -270,7 +280,7 @@ header nav ul li {
 
     img {
         vertical-align: top;
-        margin-bottom: rhythm(.5);
+        margin-bottom: $spacing-m;
     }
 }
 
@@ -288,13 +298,13 @@ header nav ul li {
 .left.file {
     float: left;
     clear: left;
-    margin-right: rhythm();
+    margin-right: $spacing-l;
 }
 
 .right.file {
     float: right;
     clear: right;
-    margin-left: rhythm();
+    margin-left: $spacing-l;
 }
 
 .left .item.resource > a:first-child,
@@ -316,8 +326,9 @@ header nav ul li {
 .break {
     width: 100%;
     clear: both;
-    @include trailing-border(1px, 0, $base-font-size, solid);
-    margin: rhythm() 0;
+    border-bottom: 1px solid $gray;
+    padding-bottom: -1px;
+    margin: $spacing-l 0;
 
     &.transparent {
         border-color: transparent;
@@ -329,7 +340,7 @@ header nav ul li {
 }
 
 .preview-block {
-    margin: rhythm() 0;
+    margin: $spacing-l 0;
     overflow: hidden;
     clear: both;
 }
@@ -337,7 +348,7 @@ header nav ul li {
 .resource-list.preview + a {
     background-color: #000;
     text-align: center;
-    padding: rhythm(.25);
+    padding: $spacing-s;
     border-radius: 2px;
     color: $gray;
     line-height: $base-line-height;
@@ -356,13 +367,13 @@ header nav ul li {
 }
 
 .toc-block > ul {
-    margin: rhythm(1, .75 * $base-font-size) 0;
+    margin: $spacing-l 0;
     list-style-type: none;
     border-left: 5px solid $gray;
 }
 
 .toc-block > ul > li {
-    margin-bottom: rhythm(.5);
+    margin-bottom: $spacing-m;
 }
 
 .toc-block > ul > li > a {
@@ -397,9 +408,9 @@ ul.resource-list {
 }
 
 ul.resource-list .resource {
-    border-color: $light;
-    @include trailing-border(1px, 1, $base-font-size, solid);
-    margin: rhythm() 0;
+    border-bottom: 1px solid $light;
+    padding-bottom: $spacing-l - 1px;
+    margin: $spacing-l 0;
     overflow: hidden;
     position: relative;
 
@@ -408,15 +419,16 @@ ul.resource-list .resource {
     }
 
     &:first-child {
-        @include leading-border(1px, 1, $base-font-size, solid);
+        border-top: 1px solid $light;
+        padding-top: $spacing-l - 1px;
     }
 }
 
 ul.resource-list .resource img {
     height: auto;
-    width: rhythm(4);
+    width: 4 * $spacing-l;
     float: right;
-    margin-left: rhythm(.5);
+    margin-left: $spacing-m;
 }
 
 ul.resource-list .resource h4 {
@@ -424,23 +436,23 @@ ul.resource-list .resource h4 {
 }
 
 ul.resource-list .resource .description {
-    max-height: rhythm(4);
+    max-height: 4 * $spacing-l;
     overflow: hidden;
     position: relative;
 
     &:after {
         content: "";
         position: absolute;
-        top: rhythm(2.75);
+        top: 2.75 * $spacing-l;
         left: 0;
         right: 0;
-        height: rhythm(1.25);
+        height: 1.25 * $spacing-l;
         background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
     }
 }
 
 ul.resource-list .resource img ~ * {
-    width: calc(100% - #{rhythm(4.5)});
+    width: calc(100% - #{4.5 * $spacing-l});
 }
 
 /* @end */
@@ -460,9 +472,9 @@ ul.resource-list .resource img ~ * {
     font-size: $base-font-size;
     background-color: #000;
     color: #e7e7e7;
-    padding: rhythm(.25) rhythm(.5);
+    padding: $spacing-s $spacing-m;
     display: block;
-    margin: rhythm(.75) 0;
+    margin: (.75 * $spacing-l) 0;
     line-height: $base-line-height;
     vertical-align: middle;
     width: span(2 of 10);
@@ -471,7 +483,7 @@ ul.resource-list .resource img ~ * {
 }
 
 .resource.show .property {
-    margin-bottom: rhythm();
+    margin-bottom: $spacing-l;
     text-align: right;
     clear: both;
 }
@@ -481,8 +493,13 @@ ul.resource-list .resource img ~ * {
     display: inline-block;
     margin: 0;
     vertical-align: top;
-    padding-right: rhythm(.5);
+    padding-right: $spacing-m;
     word-break: break-all;
+}
+
+.resource.show .property .field-term {
+    font-size: .75 * $base-font-size;
+    display: inline-block;
 }
 
 .resource.show .property .value {
@@ -492,9 +509,9 @@ ul.resource-list .resource img ~ * {
     text-align: left;
 
     &:not(:first-of-type) {
-        border-color: $gray;
-        @include leading-border(1px, .25, $base-font-size, solid);
-        margin-top: rhythm(.25);
+        border-top: 1px solid $gray;
+        padding-top: $spacing-s - 1px;
+        margin-top: $spacing-s;
     }
 }
 
@@ -502,7 +519,7 @@ ul.resource-list .resource img ~ * {
 .media.resource.show .media-render {
     width: span(8 of 10);
     float: right;
-    margin: rhythm() 0;
+    margin: $spacing-l 0;
 }
 
 .media-render > * {
