@@ -2,6 +2,9 @@
 $base-font-size: 16px;
 $base-line-height: 24px;
 
+$heading-font: "Bitter", serif;
+$body-font: "Lora", serif;
+
 // Spacing
 
 $spacing-s: .25 * $base-line-height;
@@ -13,4 +16,4 @@ $spacing-l: $base-line-height;
 $light: rgba(0,0,0,.08);
 $gray: #eee;
 $bold: rgba(0,0,0,.15);
-$red: #9E0000;
+$accent: #089494;

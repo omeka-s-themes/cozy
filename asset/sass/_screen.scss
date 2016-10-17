@@ -4,10 +4,9 @@
 }
 
 html {
-    font-family: "Lora", serif;
+    font-family: $body-font;
     font-size: $base-font-size;
     line-height: $base-line-height;
-    overflow-x: hidden;
 }
 
 body {
@@ -16,7 +15,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Bitter", serif;
+    font-family: $heading-font;
 }
 
 h1 {
@@ -52,7 +51,7 @@ a:visited {
 
 a:active,
 a:hover {
-    color: $red;
+    color: $accent;
 }
 
 p a,
@@ -69,7 +68,7 @@ input[type="url"],
 input[type="number"],
 input[type="date"],
 input[type="datetime-local"] {
-    font-family: "Lora", serif;
+    font-family: $body-font;
     font-size: $base-font-size;
     line-height: $base-line-height;
     border: 1px solid #e7e7e7;
@@ -79,6 +78,7 @@ input[type="datetime-local"] {
 input[type="submit"],
 button,
 .button {
+    font-family: $body-font;
     background-color: #000;
     text-align: center;
     padding: $spacing-s;
@@ -87,9 +87,11 @@ button,
     line-height: $base-line-height;
     display: inline-block;
     font-weight: bold;
+    border: 0;
+    cursor: pointer;
 
     &:hover {
-        background-color: $red;
+        background-color: $accent;
         color: #fff;
         border-bottom-width: 0px;
     }
@@ -107,6 +109,21 @@ button,
 @mixin container {
     max-width: 960px;
     margin: 0 auto;
+}
+
+.oc-content-inner {
+    background-color: #fff;
+
+    &:after {
+        content: "";
+        background-color: #fff;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        z-index: -1;
+        height: 9999px;
+    }
 }
 
 nav ul {
@@ -135,7 +152,9 @@ header {
     max-width: 960px;
     margin: 0 auto;
     color: #e7e7e7;
-    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    padding: $spacing-m $spacing-l;
 
     &:before {
         content: "";
@@ -154,36 +173,199 @@ header a:visited {
     color: #fff;
 }
 
-header {
-    padding: 0 $spacing-l;
-}
-
 header .site-title {
     display: inline-block;
     vertical-align: middle;
+    margin-right: auto;
 }
 
 header h1 {
-    margin: 0;
+    margin: $spacing-s $spacing-l $spacing-s 0;
     font-size: 1.25 * $base-font-size;
     line-height: $base-line-height;
 }
 
-header nav,
-header nav ul li {
-    display: inline-block;
+header nav {
+    padding: $spacing-l;
 }
 
 header nav ul {
     padding-left: 0;
 }
 
-header nav ul li {
-    margin: 0 1em;
+header nav > ul > li {
+    // Top-level items
+    border-bottom: 1px solid #cacaca;
+    padding-bottom: $spacing-s - 1px;
+    margin-bottom: $spacing-s;
+
+    &:last-child {
+        border-bottom: 0;
+    }
 }
 
-header nav ul li ul {
-    display: none;
+header nav > ul > li > ul > li {
+    // 2nd-level items
+    padding-left: $spacing-m;
+    text-indent: -$spacing-m;
+
+    &:before {
+        content: "\2014";
+        color: #000;
+    }
+}
+
+header nav a:link,
+header nav a:visited {
+    color: #000;
+}
+
+#search-form {
+    border: 1px solid #fff;
+    border-radius: 2px;
+    margin: 0;
+    height: 1.5 * $spacing-l;
+    overflow: hidden;
+    display: flex;
+    margin-right: $spacing-m;
+}
+
+#search-form > * {
+    vertical-align: top;
+}
+
+#search-form input[type="text"] {
+    background-color: #000;
+    color: #fff;
+    border: 0;
+}
+
+#search-form button,
+#menu-button {
+    border: 1px solid #fff;
+    border-radius: 2px;
+    width: 1.5 * $spacing-l;
+    height: 1.5 * $spacing-l;
+    text-align: center;
+    font-size: 18px;
+}
+
+#search-form button {
+    border-width: 0px 0px 0px 1px;
+    border-radius: 0;
+}
+
+/* @end */
+
+/* @group ----- Off-Canvas Navigation ----- */
+
+.oc-container,
+.oc-pusher,
+.oc-content {
+  height: 100%;
+}
+
+.oc-content {
+  //overflow-y: scroll;
+}
+
+.oc-content,
+.oc-content-inner {
+  position: relative;
+}
+
+.oc-container {
+  position: relative;
+  overflow: hidden;
+  //overflow-y: scroll;
+}
+
+.oc-pusher {
+  height: auto;
+  min-height: 100vh;
+  position: relative;
+  left: 0;
+  -webkit-transition: -webkit-transform 400ms;
+  transition: transform 400ms;
+  z-index: 99;
+}
+.oc-pusher::after {
+  content: '';
+  height: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  width: 0;
+  -webkit-transition: opacity 400ms, width 0.1s 400ms, height 0.1s 400ms;
+  transition: opacity 400ms, width 0.1s 400ms, height 0.1s 400ms;
+  background: transparent;
+}
+.oc-menu-open .oc-pusher::after {
+  height: 100%;
+  opacity: 1;
+  -webkit-transition: opacity 400ms;
+  transition: opacity 400ms;
+  width: 100%;
+}
+
+.oc-menu {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+  visibility: hidden;
+  width: 225px;
+  z-index: 100;
+  background: desaturate(lighten($accent, 50%), 60%);
+}
+.oc-menu-open .oc-menu::after {
+  height: 0;
+  opacity: 0;
+  -webkit-transition: opacity 400ms, width 0.1s 400ms, height 0.1s 400ms;
+  transition: opacity 400ms, width 0.1s 400ms, height 0.1s 400ms;
+  width: 0;
+}
+
+.oc-push.oc-menu {
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+}
+.oc-push.oc-menu::after {
+  display: none;
+}
+.oc-push.oc-menu-open .oc-pusher {
+  -webkit-transform: translate3d(225px, 0, 0);
+  transform: translate3d(225px, 0, 0);
+}
+
+.oc-push.oc-menu-open .oc-push.oc-menu {
+  overflow: hidden;
+  overflow-y: scroll;
+  -webkit-transition: -webkit-transform 400ms;
+  transition: transform 400ms;
+  visibility: visible;
+}
+
+.no-js .oc-menu {
+  height: auto;
+  position: static;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  width: 100%;
+  visibility: visible;
+}
+.no-js #oc-trigger {
+  display: none;
+}
+.no-js .oc-pusher {
+  padding-left: 0;
+}
+
+.no-csstransforms3d .oc-pusher {
+  padding-left: 225px;
 }
 
 /* @end */
@@ -193,7 +375,11 @@ header nav ul li ul {
 #content {
     max-width: 960px;
     margin: 0 auto;
-    padding: 0 $spacing-l $spacing-l;
+    padding: $spacing-l;
+}
+
+#content > *:first-child {
+    margin-top: 0;
 }
 
 .item-showcase {
@@ -356,7 +542,7 @@ header nav ul li ul {
     font-weight: bold;
 
     &:hover {
-        background-color: $red;
+        background-color: $accent;
         color: #fff;
         border-bottom-width: 0px;
     }
@@ -468,7 +654,7 @@ ul.resource-list .resource img ~ * {
 }
 
 .resource.show #content > h2 + h3 {
-    font-family: "Lora", serif;
+    font-family: $body-font;
     font-size: $base-font-size;
     background-color: #000;
     color: #e7e7e7;
