@@ -1,3 +1,30 @@
+@mixin button {
+    font-family: $body-font;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    background-color: #000;
+    text-align: center;
+    padding: $spacing-s;
+    border-radius: 2px;
+    color: $gray;
+    line-height: $base-line-height;
+    display: inline-block;
+    font-weight: bold;
+    border: 0;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $accent;
+        color: #fff;
+        border-bottom-width: 0px;
+    }
+
+    &.inactive {
+        background-color: $light;
+        color: #999;;
+    }
+}
+
 /* @group ----- Generic HTML elements ----- */
 * {
     box-sizing: border-box;
@@ -60,47 +87,70 @@ div a {
     text-decoration: underline;
 }
 
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="url"],
-input[type="number"],
-input[type="date"],
-input[type="datetime-local"] {
-    font-family: $body-font;
-    font-size: $base-font-size;
-    line-height: $base-line-height;
-    border: 1px solid #e7e7e7;
-    padding: $spacing-s - 1px;
-}
+    /* @group ----- Form elements ----- */
 
-input[type="submit"],
-button,
-.button {
-    font-family: $body-font;
-    background-color: #000;
-    text-align: center;
-    padding: $spacing-s;
-    border-radius: 2px;
-    color: $gray;
-    line-height: $base-line-height;
-    display: inline-block;
-    font-weight: bold;
-    border: 0;
-    cursor: pointer;
-
-    &:hover {
-        background-color: $accent;
-        color: #fff;
-        border-bottom-width: 0px;
+    textarea,
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="url"],
+    input[type="number"],
+    input[type="date"],
+    input[type="datetime-local"] {
+        font-family: $body-font;
+        font-size: $base-font-size;
+        line-height: $base-line-height;
+        border: 1px solid #000;
+        padding: $spacing-s - 1px;
     }
 
-    &.inactive {
-        background-color: $light;
-        color: #999;;
+    input[type="submit"],
+    button,
+    .button {
+        @include button;
     }
-}
+
+    select {
+        appearance: none;
+        background-color: #fff;
+        border: 1px solid #000;
+        border-radius: 2px;
+        font-family: $body-font;
+        font-size: $base-font-size;
+        line-height: $base-line-height;
+        padding: ($spacing-s - 1px);
+        background: #fff url(../../../../application/asset/img/select-arrow.svg) no-repeat;
+        background-position: right 6px center;
+        background-size: 8px;
+        height: 1.5 * $base-line-height;
+    }
+
+    .field {
+        display: flex;
+        margin: $spacing-l 0;
+    }
+
+    .field .field-meta {
+        width: span(3 of 10);
+        text-align: right;
+        padding: $spacing-s $spacing-l 0 0;
+    }
+
+    .field .field-meta .field-description {
+        font-size: .875 * $base-font-size;
+        line-height: .75 * $base-line-height;
+        font-style: italic;
+    }
+
+    .field .inputs {
+        width: span(7 of 10);
+    }
+
+    .field .inputs .value {
+        margin-bottom: $spacing-m;
+    }
+
+    /* @end */
 
 /* @end */
 
@@ -142,6 +192,10 @@ nav ul {
 .pagination form {
     display: inline-block;
     margin-right: $spacing-l;
+}
+
+.pagination input[type="text"] {
+    text-align: center;
 }
 
 /* @end */
@@ -187,6 +241,8 @@ header h1 {
 
 header nav {
     padding: $spacing-l;
+    font-size: .875 * $base-font-size;
+    line-height: .75 * $base-line-height;
 }
 
 header nav ul {
@@ -196,23 +252,31 @@ header nav ul {
 header nav > ul > li {
     // Top-level items
     border-bottom: 1px solid #cacaca;
-    padding-bottom: $spacing-s - 1px;
-    margin-bottom: $spacing-s;
+    padding-bottom: $spacing-m - 1px;
+    margin-bottom: $spacing-m;
 
     &:last-child {
         border-bottom: 0;
     }
 }
 
-header nav > ul > li > ul > li {
-    // 2nd-level items
+header nav > ul > li > ul li {
+    // 2nd-level items and beyond
     padding-left: $spacing-m;
     text-indent: -$spacing-m;
+    margin: $spacing-s 0;
 
     &:before {
         content: "\2014";
         color: #000;
+        width: $spacing-m;
+        display: block;
+        float: left;
     }
+}
+
+header nav ul ul ul {
+    display: block;
 }
 
 header nav a:link,
@@ -376,17 +440,39 @@ header nav a:visited {
     max-width: 960px;
     margin: 0 auto;
     padding: $spacing-l;
+    overflow: hidden;
 }
 
 #content > *:first-child {
     margin-top: 0;
 }
 
+nav.breadcrumbs {
+    padding: 6px;
+    border-radius: 2px;
+    margin: 12px 0;
+    background-color: #e7e7e7;
+}
+
+.sub-menu ul {
+    padding-left: 0;
+    margin: 0;
+}
+
+.sub-menu li {
+    display: inline-block;
+}
+
+.sub-menu a {
+    @include button;
+    margin-bottom: $spacing-s;
+}
+
 .item-showcase {
-    margin: $spacing-l 0;
+    margin: $spacing-l 0 ($spacing-l - 1px);
     border-top: 1px solid $light;
     border-bottom: 1px solid $light;
-    padding: ($spacing-s - 1px) 0 0;
+    padding: ($spacing-l - 1px) 0 0;
     overflow: hidden;
     text-align: center;
     clear: both;
@@ -582,6 +668,11 @@ header nav a:visited {
 
 .site-page-pagination {
     clear: both;
+    color: #fff;
+}
+
+.site-page-pagination a {
+    @include button;
 }
 
 /* @end */
@@ -648,9 +739,10 @@ ul.resource-list .resource img ~ * {
 .resource.show #content > h2:first-of-type {
     margin-bottom: 0;
     display: block;
-    width: span(8 of 10);
+    width: 80%;
     float: right;
     word-break: break-word;
+    margin: 0 $spacing-s $spacing-l 0;
 }
 
 .resource.show #content > h2 + h3 {
@@ -660,10 +752,10 @@ ul.resource-list .resource img ~ * {
     color: #e7e7e7;
     padding: $spacing-s $spacing-m;
     display: block;
-    margin: (.75 * $spacing-l) 0;
+    margin: $spacing-s 0;
     line-height: $base-line-height;
     vertical-align: middle;
-    width: span(2 of 10);
+    width: calc(20% - #{.75 * $spacing-l});;
     float: left;
     text-align: right;
 }
@@ -671,11 +763,15 @@ ul.resource-list .resource img ~ * {
 .resource.show .property {
     margin-bottom: $spacing-l;
     text-align: right;
-    clear: both;
+    width: 80%;
+    float: left;
+    display: flex;
+    padding-right: $spacing-l;
+    clear: left;
 }
 
 .resource.show .property h4 {
-    width: span(2 of 10);
+    width: 25%;
     display: inline-block;
     margin: 0;
     vertical-align: top;
@@ -689,7 +785,7 @@ ul.resource-list .resource img ~ * {
 }
 
 .resource.show .property .value {
-    width: span(8 of 10);
+    width: 75%;
     display: inline-block;
     vertical-align: top;
     text-align: left;
@@ -701,15 +797,75 @@ ul.resource-list .resource img ~ * {
     }
 }
 
-.resource.show .media-list,
-.media.resource.show .media-render {
-    width: span(8 of 10);
-    float: right;
+.resource.show .media-list {
+    width: 20%;
     margin: $spacing-l 0;
+    display: inline-block;
+    text-align: center;
+}
+
+.resource.show .media-list img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: $spacing-l;
 }
 
 .media-render > * {
     max-width: 100%;
+}
+
+.media.resource.show .property {
+    width: 100%;
+    display: flex;
+}
+
+.media.resource.show .property h4 {
+    width: 20%;
+}
+
+.media.resource.show .property .value {
+    width: 80%;
+}
+
+.media.resource.show .media-render {
+    margin: $spacing-l 0;
+    text-align: center;
+}
+
+/* @end */
+
+/* @group ----- Resource/Browse ----- */
+
+.filter {
+    border-radius: 2px;
+    margin-bottom: 12px;
+    border: 1px solid #000;
+    display: inline-block;
+}
+
+.filter-label {
+    display: inline-block;
+    padding: 5px;
+}
+
+.filter-value {
+    padding: 5px 12px;
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+}
+
+a.advanced-search {
+    @include button;
+    float: right;
+}
+
+/* @end */
+
+/* @group ----- Advanced Search ----- */
+
+#advanced-search .inputs .value {
+    margin-bottom: $spacing-m;
 }
 
 /* @end */
