@@ -18,6 +18,33 @@ $this->trigger('view.layout');
         <?php echo $this->headTitle(); ?>
         <?php echo $this->headLink(); ?>
         <?php echo $this->headStyle(); ?>
+        <?php if ($this->themeSetting('accent_color') !== '' || $this->themeSetting('nav_color') !== ''): ?>
+        <style>
+            <?php if ($accentColor = $this->themeSetting('accent_color')): ?>
+            a:active,
+            a:hover,
+            .resource-list.preview + a:hover,
+            {
+                color: <?php echo $accentColor; ?>
+            }
+
+            input[type="submit"]:hover,
+            button:hover,
+            .button:hover,
+            .sub-menu a:hover,
+            .site-page-pagination a:hover,
+            a.advanced-search:hover {
+                background-color: <?php echo $accentColor; ?>
+            }
+            <?php endif; ?>
+
+            <?php if ($navColor = $this->themeSetting('nav_color')): ?>
+            .oc-menu {
+                background-color: <?php echo $navColor; ?>
+            }
+            <?php endif; ?>
+        </style>
+        <?php endif; ?>
         <?php echo $this->headScript(); ?>
     </head>
 
