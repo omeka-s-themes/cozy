@@ -1,3 +1,10 @@
+.field .field-meta,
+.field .inputs {
+    width: 100%;
+    text-align: left;
+    margin-bottom: $spacing-s;
+}
+
 .item.resource.show #content {
     display: flex;
     flex-wrap: wrap;

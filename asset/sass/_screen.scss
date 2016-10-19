@@ -127,6 +127,7 @@ div a {
 
     .field {
         display: flex;
+        flex-wrap: wrap;
         margin: $spacing-l 0;
     }
 
