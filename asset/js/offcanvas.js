@@ -97,8 +97,8 @@ var SidebarMenuEffects = (function() {
       if (ev.which === 27) {
           ev.stopPropagation();
           ev.preventDefault();
-          resetMenu();
-          trigger.focus();
+          resetMenu()
+          setTimeout(function() { trigger.focus() }, 400);
         }
     };
 
