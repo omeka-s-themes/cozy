@@ -207,9 +207,10 @@ header {
     margin: 0 auto;
     color: #e7e7e7;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     padding: $spacing-m $spacing-l;
+    flex-wrap: wrap;
 
     &:before {
         content: "";
@@ -292,11 +293,10 @@ header nav a:visited {
 #search-form {
     border: 1px solid #fff;
     border-radius: 2px;
-    margin: 0;
+    margin: $spacing-m $spacing-m 0 0;
     height: 1.5 * $spacing-l;
     overflow: hidden;
     display: flex;
-    margin-right: $spacing-m;
 }
 
 #search-form > * {
@@ -481,6 +481,9 @@ nav.breadcrumbs {
     overflow: hidden;
     text-align: center;
     clear: both;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .item.resource .caption {
@@ -499,10 +502,7 @@ nav.breadcrumbs {
 .item-showcase .resource.item {
     display: inline-block;
     vertical-align: top;
-
-    &:not(:last-child) {
-        margin-bottom: $spacing-l;
-    }
+    margin-bottom: $spacing-l;
 
     img {
         margin-right: $spacing-m;
@@ -513,7 +513,7 @@ nav.breadcrumbs {
     }
 
     &:not(:only-child) {
-        width: 25%;
+        width: 33.33%;
         clear: none;
         padding: 0 gutter();
     }
@@ -526,8 +526,8 @@ nav.breadcrumbs {
     }
 
     &:not(:only-child) img {
-        max-height: 7 * $spacing-l;
-        width: auto;
+        max-width: 100%;
+        height: auto;
         float: none;
         margin-right: 0;
         vertical-align: top;
@@ -794,6 +794,7 @@ ul.resource-list .resource img ~ * {
     display: inline-block;
     vertical-align: top;
     text-align: left;
+    word-wrap: break-word;
 
     &:not(:first-of-type) {
         border-top: 1px solid $gray;
