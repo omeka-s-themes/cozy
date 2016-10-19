@@ -208,6 +208,7 @@ header {
     color: #e7e7e7;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     padding: $spacing-m $spacing-l;
 
     &:before {
@@ -231,6 +232,10 @@ header .site-title {
     display: inline-block;
     vertical-align: middle;
     margin-right: auto;
+}
+
+header .site-title img {
+    vertical-align: top;
 }
 
 header h1 {
