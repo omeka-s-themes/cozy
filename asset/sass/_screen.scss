@@ -798,7 +798,6 @@ ul.resource-list .resource img ~ * {
     margin: 0;
     vertical-align: top;
     padding-right: $spacing-m;
-    word-break: break-all;
 }
 
 .resource.show .property .field-term {
@@ -811,7 +810,6 @@ ul.resource-list .resource img ~ * {
     display: inline-block;
     vertical-align: top;
     text-align: left;
-    word-wrap: break-word;
 
     &:not(:first-of-type) {
         border-top: 1px solid $gray;
