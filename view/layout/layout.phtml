@@ -21,10 +21,7 @@ $this->trigger('view.layout');
         <?php if ($this->themeSetting('accent_color') !== '' || $this->themeSetting('nav_color') !== ''): ?>
         <style>
             <?php if ($accentColor = $this->themeSetting('accent_color')): ?>
-            a:active,
-            a:hover,
-            .resource-list.preview + a:hover,
-            {
+            a {
                 color: <?php echo $accentColor; ?>
             }
 

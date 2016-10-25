@@ -68,17 +68,12 @@ h4 {
 }
 
 a {
-    color: #000;
+    color: $accent;
 }
 
 a:link,
 a:visited {
     text-decoration: none;
-}
-
-a:active,
-a:hover {
-    color: $accent;
 }
 
 p a,
@@ -824,7 +819,7 @@ ul.resource-list .resource img ~ * {
 }
 
 .resource.show .property .items.value img {
-    height: 2 * $spacing-l;
+    height: 1.5 * $spacing-l;
     width: auto;
     display: inline-block;
     vertical-align: middle;
@@ -905,5 +900,13 @@ a.advanced-search {
 #advanced-search .inputs .value {
     margin-bottom: $spacing-m;
 }
+
+/* @end */
+
+/* @group ----- Common Modules ----- */
+
+.value a.metadata-browse-link {
+    font-size: .875 * $base-font-size;
+} // Metadata Browse
 
 /* @end */
