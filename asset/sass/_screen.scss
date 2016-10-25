@@ -110,6 +110,15 @@ div a {
         @include button;
     }
 
+    [type="submit"] {
+        margin-left: span(3 of 10);
+    }
+
+    input[type="checkbox"] {
+        margin: 0;
+        vertical-align: bottom;
+    }
+
     select {
         appearance: none;
         background-color: #fff;
@@ -135,6 +144,10 @@ div a {
         width: span(3 of 10);
         text-align: right;
         padding: $spacing-s $spacing-l 0 0;
+    }
+
+    .required.field .field-meta:after {
+        content: "*";
     }
 
     .field .field-meta .field-description {
