@@ -772,6 +772,8 @@ ul.resource-list .resource img ~ * {
     width: 80%;
     float: left;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
     padding-right: $spacing-l;
     clear: left;
 }
@@ -804,6 +806,19 @@ ul.resource-list .resource img ~ * {
     }
 }
 
+.resource.show .property .language {
+    background-color: $light;
+    padding: 0 $spacing-s;
+}
+
+.resource.show .property .items.value img {
+    height: 2 * $spacing-l;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin: $spacing-s $spacing-s $spacing-s 0;
+}
+
 .resource.show .media-list {
     width: 20%;
     margin: $spacing-l 0;
@@ -815,6 +830,10 @@ ul.resource-list .resource img ~ * {
     max-width: 100%;
     height: auto;
     margin-bottom: $spacing-l;
+}
+
+.resource.show .media-list ~ * {
+    clear: both;
 }
 
 .media-render > * {
