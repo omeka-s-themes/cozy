@@ -294,7 +294,7 @@ header nav a:visited {
 #search-form {
     border: 1px solid #fff;
     border-radius: 2px;
-    margin: $spacing-m $spacing-m 0 0;
+    margin: 0 $spacing-m 0 0;
     height: 1.5 * $spacing-l;
     overflow: hidden;
     display: flex;
@@ -674,6 +674,7 @@ nav.breadcrumbs {
 
 .site-page-pagination {
     clear: both;
+    margin-top: $spacing-l;
     color: #fff;
 }
 
