@@ -69,7 +69,9 @@ $this->trigger('view.layout');
 
                 <main class="oc-content" role="main">
                   <div class="oc-content-inner">
-                    <?php echo $this->content; ?>
+                    <div id="content" role="main">
+                      <?php echo $this->content; ?>
+                    </div>
                     <footer>
                         <?php if ($footerContent = $this->themeSetting('footer')): ?>
                         <?php echo $footerContent; ?>
