@@ -335,6 +335,17 @@ header nav a:visited {
 
 /* @end */
 
+/* @group ----- Footer ----- */
+
+footer {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: $spacing-l;
+    overflow: hidden;
+}
+
+/* @end */
+
 /* @group ----- Off-Canvas Navigation ----- */
 
 .oc-container,
