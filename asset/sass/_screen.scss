@@ -82,6 +82,21 @@ div a {
     text-decoration: underline;
 }
 
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    border-bottom: 3px solid #000;
+    padding: $spacing-s;
+}
+
+td {
+    border-bottom: 1px solid darken($gray, 15%);
+    padding: $spacing-s;
+}
+
     /* @group ----- Form elements ----- */
 
     textarea,
@@ -804,6 +819,8 @@ ul.resource-list .resource img ~ * {
     margin: 0;
     vertical-align: top;
     padding-right: $spacing-m;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
 }
 
 .resource.show .property .field-term {
@@ -834,7 +851,11 @@ ul.resource-list .resource img ~ * {
     width: auto;
     display: inline-block;
     vertical-align: middle;
-    margin: $spacing-s $spacing-s $spacing-s 0;
+    margin: (-$spacing-s) $spacing-s 0 0;
+}
+
+.resource.show .property table {
+    margin-top: -$spacing-s;
 }
 
 .resource.show .media-list {
