@@ -54,11 +54,7 @@ $this->trigger('view.layout');
                     <?php else: ?>
                     <a href="<?php echo $site->url(); ?>" class="site-title"><?php echo $this->pageTitle($site->title()); ?></a>
                     <?php endif; ?>
-                    <form action="<?php echo $this->escapeHtml($this->url('site/resource', ['controller' => 'item','action' => 'browse'], true)); ?>" id="search-form" class="closed">
-                        <?php $searchValue = isset($_GET['search']) ? $_GET['search'] : ''; ?>
-                        <input type="text" name="search" value="<?php echo $escape($searchValue); ?>" placeholder="<?php echo $this->translate('Search'); ?>">
-                        <button type="submit" aria-label="<?php echo $this->translate('Search'); ?>" class="o-icon-search"></button>
-                    </form>
+                    <?php echo $this->partial('common/search-form'); ?>
                     <div id="oc-trigger">
                         <button id="menu-button" class="o-icon-menu" data-effect="oc-push" aria-label="<?php echo $this->translate('Menu'); ?>"></button>
                     </div>
