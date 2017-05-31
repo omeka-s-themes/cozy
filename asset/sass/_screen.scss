@@ -333,6 +333,24 @@ header nav a:visited {
     border: 0;
 }
 
+#search-form button[type="submit"] {
+    margin-left: 0;
+    text-indent: -9999px;
+    position: relative;
+
+    &:before {
+        content: "\f002";
+        font-family: "FontAwesome";
+        text-indent: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        line-height: 1.5 * $base-line-height;
+    }
+}
+
 #search-form button,
 #menu-button {
     border: 1px solid #fff;
@@ -872,6 +890,10 @@ ul.resource-list .resource img ~ * {
 }
 
 .resource.show .media-list ~ * {
+    clear: both;
+}
+
+.media-render {
     clear: both;
 }
 
