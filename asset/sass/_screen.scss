@@ -864,12 +864,11 @@ ul.resource-list .resource img ~ * {
     padding: 0 $spacing-s;
 }
 
-.resource.show .property .items.value img {
+.resource.show .property .value img {
     height: 1.5 * $spacing-l;
     width: auto;
-    display: inline-block;
     vertical-align: middle;
-    margin: (-$spacing-s) $spacing-s 0 0;
+    margin: 0 $spacing-s 0 0;
 }
 
 .resource.show .property table {
@@ -917,6 +916,14 @@ ul.resource-list .resource img ~ * {
 .media.resource.show .media-render {
     margin: $spacing-l 0;
     text-align: center;
+}
+
+#item-linked {
+    clear: left;
+}
+
+#item-linked h3 {
+    margin: $spacing-m 0 (1.5 * $spacing-l);
 }
 
 /* @end */
