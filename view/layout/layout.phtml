@@ -9,6 +9,7 @@ $this->headLink()->prependStylesheet($this->assetUrl('css/iconfonts.css', 'Omeka
 $this->headLink()->prependStylesheet('//fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic|Bitter:700');
 $this->headScript()->prependFile($this->assetUrl('vendor/jquery/jquery.min.js', 'Omeka'));
 $this->trigger('view.layout');
+$userBar = $this->partial('common/user-bar', ['site' => $site]);
 ?>
 
 <?php echo $this->doctype(); ?>
@@ -48,6 +49,7 @@ $this->trigger('view.layout');
     <?php echo $this->htmlElement('body'); ?>
         <div id="oc-container" class="oc-container">
             <div class="oc-pusher">
+                <?php echo $userBar; ?>
                 <header role="banner">
                     <?php if ($this->themeSetting('logo')): ?>
                     <a href="<?php echo $site->url(); ?>" class="site-title"><img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" title="Logo"></a>
