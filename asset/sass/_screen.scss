@@ -963,6 +963,25 @@ a.advanced-search {
     margin-bottom: $spacing-m;
 }
 
+.remove-value.button {
+    width: 1.5 * $spacing-l;
+    height: 1.5 * $spacing-l;
+    position: relative;
+    margin-left: $spacing-s;
+    text-indent: -9999px;
+
+    &:before {
+        text-indent: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding: $spacing-s;
+        line-height: $base-line-height;
+    }
+}
+
 /* @end */
 
 /* @group ----- Common Modules ----- */
