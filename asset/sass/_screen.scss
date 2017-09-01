@@ -138,6 +138,7 @@ td {
         font-size: $base-font-size;
         line-height: $base-line-height;
         padding: ($spacing-s - 1px);
+        padding-right: $spacing-l;
         background: #fff url(../../../../application/asset/img/select-arrow.svg) no-repeat;
         background-position: right 6px center;
         background-size: 8px;
@@ -980,6 +981,10 @@ a.advanced-search {
         padding: $spacing-s;
         line-height: $base-line-height;
     }
+}
+
+.query-property {
+    width: 30%;
 }
 
 /* @end */
