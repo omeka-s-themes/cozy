@@ -62,7 +62,7 @@ $userBar = $this->partial('common/user-bar', ['site' => $site]);
                         <button id="menu-button" class="o-icon-menu" data-effect="oc-push" aria-label="<?php echo $this->translate('Menu'); ?>"></button>
                     </div>
                     <nav id="menu" class="oc-menu oc-push" role="navigation">
-                        <?php echo $site->publicNav()->renderMenu(); ?>
+                        <?php echo $site->publicNav()->menu()->renderMenu(); ?>
                     </nav>
                 </header>
 
