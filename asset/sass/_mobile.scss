@@ -1,3 +1,10 @@
+img,
+select {
+    max-width: 100%;
+    height: auto;
+}
+
+
 .field .field-meta,
 .field .inputs {
     width: 100%;
@@ -40,8 +47,25 @@
 }
 
 .item.resource.show .property h4,
-.item.resource.show .property .value {
+.item.resource.show .property .values,
+#linked-resources,
+#linked-resources > h4,
+#linked-resources .linked-resource {
     text-align: left;
     width: 100%;
     float: none;
+}
+
+#linked-resources > h4,
+#linked-resources .linked-resource {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.linked-resource .resource-link {
+    flex: 2;
+}
+
+.linked.resources .resource-class {
+    flex: 1;
 }
