@@ -880,15 +880,25 @@ ul.resource-list .resource img ~ * {
 
 .resource.show .media-list {
     width: 20%;
-    margin: $spacing-l 0;
+    margin: $spacing-l 0 0;
     display: inline-block;
     text-align: center;
+}
+
+.resource.show .media-list .resource-link {
+    margin-bottom: $spacing-l;
+    display: block;
 }
 
 .resource.show .media-list img {
     max-width: 100%;
     height: auto;
-    margin-bottom: $spacing-l;
+}
+
+.resource.show .media-list .resource-name {
+    word-wrap: break-word;
+    margin-top: $spacing-s;
+    display: block;
 }
 
 .resource.show .media-list ~ * {
