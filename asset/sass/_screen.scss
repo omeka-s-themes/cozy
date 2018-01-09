@@ -937,6 +937,18 @@ ul.resource-list .resource img ~ * {
     align-items: flex-start;
 }
 
+#linked-resources caption {
+    text-align: left;
+    font-weight: bold;
+    padding: $spacing-s $spacing-s ($spacing-s - 3px);
+    border-bottom: 3px solid #000;
+}
+
+#linked-resources th {
+    text-align: left;
+    border-bottom: 1px solid #000;
+}
+
 .linked-header,
 .linked-footer {
     width: 100%;
@@ -983,22 +995,12 @@ ul.resource-list .resource img ~ * {
     border-bottom: 1px solid $gray;
     margin-bottom: $spacing-m;
     width: 75%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 0 $spacing-s #{$spacing-m - 1px};
 }
 
 #linked-resources .resource-link {
     display: flex;
     align-items: center;
-}
-
-#linked-resources .resource-class {
-    padding: 0 $spacing-s;
-    border: 1px solid $gray;
-    margin-bottom: $spacing-s;
-    display: inline-block;
 }
 
 /* @end */
