@@ -3,6 +3,6 @@ $prevText = $this->translate('Prev');
 $nextText = $this->translate('Next');
 ?>
 <div class="site-page-pagination">
-    <?php if ($prevPage) { echo $this->hyperlink($prevText, $prevPage->siteUrl()); } ?>
-    <?php if ($nextPage) { echo $this->hyperlink($nextText, $nextPage->siteUrl()); } ?></span>
+    <?php echo $prevPage ? $this->hyperlink($prevText, $prevPage->siteUrl()) : $prevText; ?>
+    <?php echo $nextPage ? $this->hyperlink($nextText, $nextPage->siteUrl()) : $nextText; ?>
 </div>
