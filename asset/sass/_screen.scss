@@ -725,6 +725,23 @@ nav.breadcrumbs {
     color: $light;
 }
 
+.list-of-sites .site-list {
+    .site {
+        margin-bottom: $spacing-m;
+    }
+
+    .site-link {
+        display: inline-block;
+        font-size: 1.25 * $base-font-size;
+        margin-bottom: $spacing-s;
+    }
+
+    .site-summary {
+        margin: 0 0 0 $spacing-m;
+        line-height: 20px;
+    }
+}
+
 .site-page-pagination {
     clear: both;
     margin-top: $spacing-l;
