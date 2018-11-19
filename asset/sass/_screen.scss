@@ -1058,6 +1058,16 @@ a.advanced-search {
     float: right;
 }
 
+.browse-controls {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.sorting button {
+    margin-left: 0;
+}
+
 /* @end */
 
 /* @group ----- Advanced Search ----- */
