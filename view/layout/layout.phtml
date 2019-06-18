@@ -1,9 +1,10 @@
-<?php
+  <?php
 $escape = $this->plugin('escapeHtml');
 $this->htmlElement('html')->setAttribute('lang', $this->lang());
 $this->headMeta()->setCharset('utf-8');
 $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1');
-$this->headTitle($this->setting('installation_title', 'Omeka S'))->setSeparator(' · ');
+$this->headTitle($siteTitle)->setSeparator(' · ');
+$this->headTitle()->append($this->setting('installation_title', 'Omeka S'));
 $this->headLink()->prependStylesheet($this->assetUrl('css/style.css'));
 $this->headLink()->prependStylesheet($this->assetUrl('css/iconfonts.css', 'Omeka'));
 $this->headLink()->prependStylesheet('//fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic|Bitter:700');
@@ -52,11 +53,15 @@ $userBar = $this->userBar();
             <div class="oc-pusher">
                 <?php echo $userBar; ?>
                 <header role="banner">
-                    <?php if ($this->themeSetting('logo')): ?>
-                    <a href="<?php echo $site->url(); ?>" class="site-title"><img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" title="Logo"></a>
-                    <?php else: ?>
-                    <a href="<?php echo $site->url(); ?>" class="site-title"><?php echo $this->pageTitle($site->title()); ?></a>
-                    <?php endif; ?>
+                    <h1>
+                        <a href="<?php echo $site->url(); ?>" class="site-title">
+                        <?php if ($this->themeSetting('logo')): ?>
+                            <img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" alt="<?php echo $siteTitle; ?>" />
+                        <?php else: ?>
+                            <?php echo $siteTitle; ?>
+                        <?php endif; ?>
+                        </a>
+                    </h1>
                     <?php echo $this->partial('common/search-form'); ?>
                     <div id="oc-trigger">
                         <button id="menu-button" class="o-icon-menu" data-effect="oc-push" aria-label="<?php echo $this->translate('Menu'); ?>"></button>
