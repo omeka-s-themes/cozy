@@ -887,8 +887,14 @@ a.advanced-search {
 
 /* @group ----- Search ----- */
 
+.sitewide-search-form {
+  display: none;
+}
+
+
 .results {
   margin-bottom: 2 * $spacing-l;
+  clear: both;
 }
 
 .results ul {
@@ -896,7 +902,7 @@ a.advanced-search {
   padding-left: 0;  
 }
 
-.results .item-title {
+.results .result-title {
   font-weight: bold;
 }
 
@@ -915,6 +921,12 @@ a.advanced-search {
   }
  }
  
+ .results .result-site,
+ .results ul ul {
+   padding-left: $spacing-m;
+   display: block;
+ }
+ 
 .results .tablesaw {
   margin-bottom: $spacing-l;
 }
@@ -923,6 +935,37 @@ a.advanced-search {
    @include button;
    margin-top: (-1 * $spacing-m);
  }
+
+.pagination + .results {
+  margin: $spacing-l 0 0;
+  clear: both;
+}
+
+.sitewide-search-form ~ .results + .pagination {
+  margin-top: 0;
+}
+
+.sitewide-search-form ~ .advanced-search {
+  display: block;
+  float: left;
+}
+
+.sitewide-search-form ~ p {
+  clear: both;
+}
+
+.sitewide-search-form ~ h2 {
+  width: 50%;
+  float: left;
+  clear: both;
+}
+
+.sitewide-search-form ~ .pagination {
+  margin: (1.25 * $spacing-l) 0 $spacing-l;
+  text-align: right;
+  width: 50%;
+  float: right;
+}
 
 .index.search .results ul li {
   margin-bottom: $spacing-s;
