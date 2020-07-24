@@ -887,16 +887,47 @@ a.advanced-search {
 
 /* @group ----- Search ----- */
 
-.index.search .results ul {
+.results {
+  margin-bottom: 2 * $spacing-l;
+}
+
+.results ul {
   list-style: none;
-  padding-left: 0;
-  columns: 2;
+  padding-left: 0;  
+}
+
+.results .item-title {
+  font-weight: bold;
+}
+
+.results > ul {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.results > ul > li {
+  margin-bottom: $spacing-l;
+  width: calc(50% - #{$spacing-l});
   
-  li {
-    margin-bottom: $spacing-s;
-    padding-bottom: $spacing-s;
-    border-bottom: 1px solid $gray;
+  &:nth-child(2n) {
+    margin-left: $spacing-l;
   }
+ }
+ 
+.results .tablesaw {
+  margin-bottom: $spacing-l;
+}
+ 
+.results > a:last-child {
+   @include button;
+   margin-top: (-1 * $spacing-m);
+ }
+
+.index.search .results ul li {
+  margin-bottom: $spacing-s;
+  padding-bottom: $spacing-s;
+  border-bottom: 1px solid $gray;
 }
 
 /* @end */
