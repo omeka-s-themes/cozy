@@ -944,10 +944,6 @@ a.advanced-search {
    display: block;
  }
  
-.results .tablesaw {
-  margin-bottom: $spacing-l;
-}
- 
 .results > a:last-child {
    @include button;
    margin-top: (-1 * $spacing-m);
