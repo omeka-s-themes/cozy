@@ -197,7 +197,7 @@ td {
         right: 0;
         left: 0;
         z-index: -1;
-        height: 9999px;
+        ///height: 9999px;
     }
 }
 
@@ -225,6 +225,23 @@ nav ul {
 /* @end */
 
 /* @group ----- Header ----- */
+
+#skipnav {
+  position: fixed;
+  top: $spacing-l;
+  left: 50%;
+  border: 1px solid #000;
+  transform: translateX(-50%);
+  z-index: -5;
+  padding: $spacing-s;
+  background-color: #fff;
+  opacity: 0;
+  
+  &:focus {
+    z-index: 1000;
+    opacity: 1;
+  }
+}
 
 header {
     max-width: 960px;
