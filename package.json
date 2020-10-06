@@ -1,6 +1,6 @@
 {
   "name": "cozy",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "A theme for Omeka S.",
   "main": "gulpfile.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/omeka-s-themes/default.git"
+    "url": "git+https://github.com/omeka-s-themes/cozy.git"
   },
   "keywords": [
     "omeka-s",
