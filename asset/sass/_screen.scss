@@ -685,6 +685,11 @@ ul.resource-list .resource img ~ * {
     padding: 0 $spacing-s;
 }
 
+.resource-link {
+    display: inline-flex;
+    align-items: center;
+}
+
 .resource-link img {
     height: 1.5 * $spacing-l;
     width: auto;
@@ -946,7 +951,7 @@ a.advanced-search {
  
 .results > a:last-child {
    @include button;
-   margin-top: (-1 * $spacing-m);
+   margin-top: 0;
  }
 
 .pagination + .results {
