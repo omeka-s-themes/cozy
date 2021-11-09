@@ -383,6 +383,21 @@ header nav a:visited {
     border-radius: 0;
 }
 
+.banner {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.banner.contained {
+    @include container();
+    padding: 0 $spacing-l;
+}
+
+.banner img {
+    width: 100%;
+}
+
 /* @end */
 
 /* @group ----- Footer ----- */
