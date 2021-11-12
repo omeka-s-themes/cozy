@@ -88,11 +88,11 @@ $bannerPosition = ($this->themeSetting('banner_position')) ? str_replace('_','-'
                     <nav id="menu" class="oc-menu oc-push" role="navigation">
                         <?php echo $site->publicNav()->menu()->renderMenu(); ?>
                     </nav>
-                    <?php if ($banner): ?>
                 </header>
 
                 <main class="oc-content" role="main">
                   <div class="oc-content-inner">
+                    <?php if ($banner): ?>
                     <div class="banner <?php echo $bannerWidth; ?>">
                         <img src="<?php echo $this->themeSettingAssetUrl('banner'); ?>" title="Banner">
                     </div>
