@@ -12,6 +12,7 @@ $this->headLink()->prependStylesheet('//fonts.googleapis.com/css?family=Lora:400
 $this->headScript()->prependFile($this->assetUrl('js/global.js', 'Omeka'));
 $this->headScript()->prependFile($this->assetUrl('vendor/jquery/jquery.min.js', 'Omeka'));
 $this->trigger('view.layout');
+$this->jsTranslate();
 $userBar = $this->userBar();
 $banner = $this->themeSettingAssetUrl('banner');
 $bannerWidth = ($this->themeSetting('banner_width')) ? $this->themeSetting('banner_width') : '';
