@@ -729,6 +729,7 @@ ul.resource-list .resource img ~ * {
 .resource.show .property .language {
     background-color: $light;
     padding: 0 $spacing-s;
+    margin-right: $spacing-s;
 }
 
 .values .value {
