@@ -97,6 +97,10 @@ td {
     padding: $spacing-s;
 }
 
+pre {
+    overflow-x: scroll;
+}
+
     /* @group ----- Form elements ----- */
 
     textarea,
