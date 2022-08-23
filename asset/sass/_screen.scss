@@ -423,10 +423,6 @@ footer {
   height: 100%;
 }
 
-.oc-content {
-  //overflow-y: scroll;
-}
-
 .oc-content,
 .oc-content-inner {
   position: relative;
@@ -678,28 +674,31 @@ ul.resource-list .resource img ~ * {
     display: block;
     margin: $spacing-s 0;
     line-height: $base-line-height;
-    vertical-align: middle;
     width: calc(20% - #{.75 * $spacing-l});;
     float: left;
     text-align: right;
 }
 
+.with-sidebar {
+    width: 80%;
+    float: left;
+}
+
+.resource.show .media-list, 
 .resource.show .property {
     margin-bottom: $spacing-l;
     text-align: right;
-    width: 80%;
-    float: left;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
     padding-right: $spacing-l;
-    clear: left;
 
     &:last-child {
         margin-bottom: 0;
     }
 }
 
+.resource.show .media-list h4,
 .resource.show .property h4,
 #linked-resources > h4 {
     width: 25%;
@@ -717,10 +716,10 @@ ul.resource-list .resource img ~ * {
 }
 
 .resource.show .property .values,
-.resource.show .property h4 ~ .value {
+.resource.show .media-list h4 ~ .resource-link {
     width: 75%;
-    display: inline-block;
-    vertical-align: top;
+    display: inline-flex;
+    flex-wrap: wrap;
     text-align: left;
 
     &:not(:first-of-type) {
@@ -730,6 +729,9 @@ ul.resource-list .resource img ~ * {
     }
 }
 
+.resource.show .property .value {
+    width: 100%;
+}
 .resource.show .property .language {
     background-color: $light;
     padding: 0 $spacing-s;
@@ -767,26 +769,18 @@ ul.resource-list .resource img ~ * {
     margin-top: -$spacing-s;
 }
 
-.resource.show .media-list {
-    width: 20%;
-    margin: $spacing-l 0 0;
-    display: inline-block;
-    text-align: center;
-}
-
-.resource.show .media-list .resource-link {
+.resource.show #itemfiles.media-list {
+    width: 100%;
     margin-bottom: $spacing-l;
-    display: block;
 }
 
-.resource.show .media-list img {
-    max-width: 100%;
-    height: auto;
+.resource.show .media-embeds,
+.resource.show .media-list .resource-link:not(:last-child) {
+    margin-bottom: $spacing-l;
 }
 
 .resource.show .media-list .resource-name {
     word-wrap: break-word;
-    margin-top: $spacing-s;
     display: block;
 }
 
@@ -938,6 +932,36 @@ a.advanced-search {
 
 .sorting button {
     margin-left: 0;
+}
+
+.resource.show .sidebar.right {
+    width: 20%;
+    float: right;
+
+    .media-list,
+    .media-list h4,
+    .media-list .resource-link,
+    .property h4,
+    .property .value,
+    .property .values {
+        width: 100%;
+        text-align: left;
+        padding-right: 0;
+    }
+
+    .media-list h4 {
+        margin-bottom: $spacing-s;
+    }
+
+    .media-list .resource-link {
+        align-items: flex-start;
+        word-break: break-word;
+    }
+
+    .media-render * {
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 /* @end */
