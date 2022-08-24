@@ -1,0 +1,25 @@
+<?php
+$translate = $this->plugin('translate');
+$item = $media->item();
+$this->htmlElement('body')->appendAttribute('class', 'media resource show'); 
+?>
+
+<?php echo $this->pageTitle($media->displayTitle(), 2); ?>
+<h3><?php echo $translate('Media'); ?></h3>
+<p class="media-parent-item">
+    <?php echo sprintf($translate('Part of %s'), $item->link($item->displayTitle())); ?>
+</p>
+
+<div class="full-width">
+<?php echo $this->resourcePageBlocks($media, 'full_width_main'); ?>
+</div>
+
+<div class="with-sidebar">
+<?php $this->trigger('view.show.before'); ?>
+<?php echo $this->resourcePageBlocks($media); ?>
+<?php $this->trigger('view.show.after'); ?>
+</div>
+
+<div class="sidebar right">
+    <?php echo $this->resourcePageBlocks($media, 'right'); ?>
+</div>
