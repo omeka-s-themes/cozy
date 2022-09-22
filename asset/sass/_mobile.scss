@@ -46,10 +46,10 @@ select {
     display: block;
 }
 
-.item.resource.show .property h4,
-.item.resource.show .property .values,
+.item.resource.show .property dt,
+.item.resource.show .property .value,
 #linked-resources,
-#linked-resources > h4,
+#linked-resources > dt,
 #linked-resources .linked-resource {
     text-align: left;
     width: 100%;

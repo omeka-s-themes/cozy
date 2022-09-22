@@ -9,6 +9,7 @@ $lang = $this->lang();
 $query = $this->params()->fromQuery();
 $itemSetShow = isset($itemSet);
 if ($itemSetShow):
+    $this->headLink()->prependStylesheet($this->assetUrl('css/resource-page-blocks.css', 'Omeka'));
     $this->htmlElement('body')->appendAttribute('class', 'item-set show');
     $query['item_set_id'] = $itemSet->id();
 endif;
@@ -18,16 +19,13 @@ endif;
     <?php echo $this->pageTitle($itemSet->displayTitle(null, ($filterLocale ? $lang : null)), 2); ?>
     <h3><?php echo $translate('Item set'); ?></h3>
     <div class="full-width">
-        <?php echo $this->resourcePageBlocks($itemSet, 'full_width_main'); ?>
-        <?php if (($this->resourcePageBlocks($itemSet, 'full_width_main')) == null): ?>
-        test
-        <?php endif; ?>
+        <?php echo $this->resourcePageBlocks($itemSet, 'full_width_main')->getBlocks(); ?>
     </div>
     <div class="with-sidebar">
-        <?php echo $this->resourcePageBlocks($itemSet); ?>
+        <?php echo $this->resourcePageBlocks($itemSet)->getBlocks(); ?>
     </div>
     <div class="right sidebar">
-        <?php echo $this->resourcePageBlocks($itemSet, 'right'); ?>
+        <?php echo $this->resourcePageBlocks($itemSet, 'right')->getBlocks(); ?>
     </div>
     <div class="item-set-items">
     <?php echo '<h3>' . $escape($translate('Items')) . '</h3>'; ?>
