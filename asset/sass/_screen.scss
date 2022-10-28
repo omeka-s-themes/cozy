@@ -560,8 +560,10 @@ nav.breadcrumbs {
 
 .site-page-pagination {
     clear: both;
-    margin-top: $spacing-l;
+    margin: 0 auto;
+    padding: $spacing-l;
     color: #fff;
+    max-width: 1200px;
 }
 
 .site-page-pagination a {
