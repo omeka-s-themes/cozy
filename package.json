@@ -1,6 +1,6 @@
 {
   "name": "cozy",
-  "version": "1.5.3",
+  "version": "1.6.0",
   "description": "A theme for Omeka S.",
   "main": "gulpfile.js",
   "scripts": {
