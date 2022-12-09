@@ -949,6 +949,10 @@ a.advanced-search {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    & > * {
+        margin-bottom: $spacing-m;
+    }
 }
 
 .sorting button {
