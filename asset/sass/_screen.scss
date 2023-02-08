@@ -76,6 +76,10 @@ a:visited {
     text-decoration: none;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 p a,
 span a,
 div a {
@@ -710,7 +714,7 @@ ul.resource-list .resource img ~ * {
 .media-list .value,
 .property .value {
     width: 100%;
-    margin-left: 0;
+    margin: 0 0 $spacing-s;
 }
 
 .item-with-metadata .property dt,
