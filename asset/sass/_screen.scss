@@ -1121,8 +1121,20 @@ a.advanced-search {
 
 /* @group ----- Common Modules ----- */
 
+// Metadata Browse
+
 .value a.metadata-browse-link {
     font-size: .875 * $base-font-size;
-} // Metadata Browse
+}
+
+// Item Carousel
+
+button.slick-arrow:hover {
+    background-color: transparent;
+}
+
+button.slick-arrow:hover span:before {
+    color: $accent;
+}
 
 /* @end */
