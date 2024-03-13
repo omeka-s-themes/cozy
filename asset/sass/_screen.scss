@@ -611,7 +611,7 @@ ul.resource-list .resource h4 {
     margin-top: 0;
 }
 
-ul.resource-list .resource .description {
+.body-truncate-fade ul.resource-list .resource .description {
     max-height: 4 * $spacing-l;
     overflow: hidden;
     position: relative;
@@ -625,6 +625,13 @@ ul.resource-list .resource .description {
         height: 1.25 * $spacing-l;
         background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
     }
+}
+
+.body-truncate-ellipsis ul.resource-list .resource .description {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 ul.resource-list .resource img ~ * {
