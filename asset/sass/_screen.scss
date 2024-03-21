@@ -217,13 +217,23 @@ nav ul {
 
 /* @group ----- Pagination ----- */
 
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 .pagination .button {
     min-width: 1.5 * $base-line-height;
 }
 
 .pagination form {
     display: inline-block;
-    margin-right: $spacing-l;
+    margin-right: $spacing-m;
+}
+
+.pagination .pagination-buttons {
+    margin-right: $spacing-m;
 }
 
 .pagination input[type="text"] {
