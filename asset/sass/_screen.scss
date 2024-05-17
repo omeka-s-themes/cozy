@@ -702,6 +702,11 @@ ul.resource-list .resource img ~ * {
     text-align: right;
 }
 
+.full-width {
+    clear: both;
+    margin-bottom: $spacing-l;
+}
+
 .with-sidebar {
     width: 65%;
     float: left;
