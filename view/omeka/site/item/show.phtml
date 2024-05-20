@@ -5,9 +5,12 @@ $this->htmlElement('body')->appendAttribute('class', 'item resource show');
 $filterLocale = (bool) $this->siteSetting('filter_locale_values');
 $lang = $this->lang();
 ?>
-<?php echo $this->pageTitle($item->displayTitle(null, ($filterLocale ? $lang : null)), 2); ?>
-<h3><?php echo $translate('Item'); ?></h3>
+<div class="resource-title">
+    <?php echo $this->pageTitle($item->displayTitle(null, ($filterLocale ? $lang : null)), 2); ?>
+    <span class="resource-type label"><?php echo $translate('Item'); ?></span>
+</div>
 <?php $fullMainBlocks = $this->resourcePageBlocks($item, 'full_width_main')->getBlocks(); ?>
+<?php $fullMainBlocks; ?>
 <?php if ($fullMainBlocks): ?>
 <div class="full-width">
     <?php echo $fullMainBlocks; ?>

@@ -10,8 +10,11 @@ $this->htmlElement('body')->appendAttribute('class', 'media resource show');
 
 <?php $this->trigger('view.show.before'); ?>
 
-<?php echo $this->pageTitle($media->displayTitle(), 2); ?>
-<h3><?php echo $translate('Media'); ?></h3>
+<div class="resource-title">
+    <?php echo $this->pageTitle($media->displayTitle(), 2); ?>
+    <span class="resource-type label"><?php echo $translate('Media'); ?></span>
+</div>
+
 <p class="media-parent-item">
     <?php echo sprintf($translate('Part of %s'), $item->link($item->displayTitle())); ?>
 </p>

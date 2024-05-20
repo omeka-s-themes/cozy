@@ -679,27 +679,25 @@ ul.resource-list .resource img ~ * {
     overflow: hidden;
 }
 
-.resource.show #content > h2:first-of-type {
-    margin-bottom: 0;
-    display: block;
-    width: 80%;
-    float: right;
-    word-break: break-word;
-    margin: 0 $spacing-s $spacing-l 0;
+.resource-title {
+    display: flex;
+    align-items: center;
 }
 
-.resource.show #content > h2 + h3 {
+.resource-title h2 {
+    margin: 0 $spacing-m 0 0;
+    word-break: break-word;
+}
+
+.resource-type.label {
     font-family: $body-font;
     font-size: $base-font-size;
     background-color: #000;
     color: #e7e7e7;
-    padding: $spacing-s $spacing-m;
-    display: block;
-    margin: $spacing-s 0;
-    line-height: $base-line-height;
-    width: calc(20% - #{.75 * $spacing-l});;
-    float: left;
-    text-align: right;
+    padding: $spacing-m;
+    display: inline-block;
+    margin: 0;
+    line-height: .5 * $base-font-size;
 }
 
 .full-width {
