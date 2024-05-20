@@ -870,6 +870,10 @@ ul.resource-list .resource img ~ * {
     align-items: flex-start;
 }
 
+#linked-resources table {
+    margin-bottom: $spacing-l;
+}
+
 #linked-resources caption {
     text-align: left;
     font-weight: bold;
@@ -896,6 +900,10 @@ ul.resource-list .resource img ~ * {
     width: 50%;
     justify-content: flex-start;
     margin-right: auto;
+}
+
+.linked-header .pagination {
+    align-self: flex-end;
 }
 
 #linked-filter h4 {
