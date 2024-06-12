@@ -23,7 +23,7 @@
   "devDependencies": {
     "autoprefixer": "^9.2.1",
     "set-value": ">=4.0.1",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "gulp-postcss": "^9.0.1",
     "postcss": "^8.4.31",
     "gulp-sass": "^5.0.0",
