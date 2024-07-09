@@ -487,7 +487,7 @@ footer {
   visibility: hidden;
   width: 225px;
   z-index: 100;
-  background: desaturate(lighten($accent, 50%), 60%);
+  background: $navColor;
 }
 .oc-menu-open .oc-menu::after {
   height: 0;

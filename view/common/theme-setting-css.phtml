@@ -3,32 +3,16 @@ $accentColor = $this->themeSetting('accent_color');
 $navColor = $this->themeSetting('nav_color');
 ?>
 
-<?php if ($accentColor !== '' || $navColor !== ''): ?>
 <style>
-    <?php if ($accentColor): ?>
-    a {
-        color: <?php echo $accentColor; ?>
-    }
+    :root {
+        <?php if ($accentColor): ?>
+        --accent-color: <?php echo $accentColor; ?>;
+        <?php endif; ?>
 
-    input[type="submit"]:hover,
-    button:hover,
-    .button:hover,
-    .sub-menu a:hover,
-    .site-page-pagination a:hover,
-    a.advanced-search:hover {
-        background-color: <?php echo $accentColor; ?>
+        <?php if ($navColor): ?>
+        --nav-color: <?php echo $navColor; ?>;
+        <?php endif; ?>
     }
-
-    button.slick-arrow span:before {
-        color: <?php echo $accentColor; ?>
-    }
-    <?php endif; ?>
-
-    <?php if ($navColor): ?>
-    .oc-menu {
-        background-color: <?php echo $navColor; ?>
-    }
-    <?php endif; ?>
 
     .banner {
         height: <?php echo ($bannerHeight !== '') ? $bannerHeight: 'auto'  ?>;
@@ -42,4 +26,3 @@ $navColor = $this->themeSetting('nav_color');
         }
     <?php endif; ?>
 </style>
-<?php endif; ?>
