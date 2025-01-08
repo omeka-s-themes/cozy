@@ -63,7 +63,7 @@ $this->htmlElement('body')->appendAttribute('class', 'body-truncate-' . $bodyTru
                     </nav>
                 </header>
 
-                <main class="oc-content" role="main">
+                <div class="oc-content">
                   <div class="oc-content-inner">
                     <?php if ($banner): ?>
                     <div class="banner <?php echo $bannerWidth; ?>">
@@ -81,7 +81,7 @@ $this->htmlElement('body')->appendAttribute('class', 'body-truncate-' . $bodyTru
                         <?php endif; ?>
                     </footer>
                   </div>
-                </main>
+                </div>
             </div>
         </div>
         <script type="text/javascript" src="<?php echo $this->assetUrl('js/offcanvas.js'); ?>"></script>
