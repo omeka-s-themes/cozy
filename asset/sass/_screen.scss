@@ -274,6 +274,7 @@ header {
     align-items: center;
     padding: $spacing-m $spacing-l;
     flex-wrap: wrap;
+    position: relative;
 
     &:before {
         content: "";
@@ -433,116 +434,26 @@ footer {
 
 /* @end */
 
-/* @group ----- Off-Canvas Navigation ----- */
-
-.oc-container,
-.oc-pusher,
-.oc-content {
-  height: 100%;
-}
-
-.oc-content,
-.oc-content-inner {
-  position: relative;
-}
-
-.oc-container {
-  position: relative;
-  overflow: hidden;
-  //overflow-y: scroll;
-}
-
-.oc-pusher {
-  height: auto;
-  min-height: 100vh;
-  position: relative;
-  left: 0;
-  -webkit-transition: -webkit-transform 400ms;
-  transition: transform 400ms;
-  z-index: 99;
-}
-.oc-pusher::after {
-  content: '';
-  height: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  opacity: 0;
-  width: 0;
-  -webkit-transition: opacity 400ms, width 0.1s 400ms, height 0.1s 400ms;
-  transition: opacity 400ms, width 0.1s 400ms, height 0.1s 400ms;
-  background: transparent;
-}
-.oc-menu-open .oc-pusher::after {
-  height: 100%;
-  opacity: 1;
-  -webkit-transition: opacity 400ms;
-  transition: opacity 400ms;
-  width: 100%;
-}
-
-.oc-menu {
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-transition: all 400ms;
-  transition: all 400ms;
-  visibility: hidden;
-  width: 225px;
-  z-index: 100;
-  background: $navColor;
-}
-.oc-menu-open .oc-menu::after {
-  height: 0;
-  opacity: 0;
-  -webkit-transition: opacity 400ms, width 0.1s 400ms, height 0.1s 400ms;
-  transition: opacity 400ms, width 0.1s 400ms, height 0.1s 400ms;
-  width: 0;
-}
-
-.oc-push.oc-menu {
-  -webkit-transform: translate3d(-100%, 0, 0);
-  transform: translate3d(-100%, 0, 0);
-}
-.oc-push.oc-menu::after {
-  display: none;
-}
-.oc-push.oc-menu-open .oc-pusher {
-  -webkit-transform: translate3d(225px, 0, 0);
-  transform: translate3d(225px, 0, 0);
-}
-
-.oc-push.oc-menu-open .oc-push.oc-menu {
-  overflow: hidden;
-  overflow-y: scroll;
-  -webkit-transition: -webkit-transform 400ms;
-  transition: transform 400ms;
-  visibility: visible;
-}
-
-.no-js .oc-menu {
-  height: auto;
-  position: static;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  width: 100%;
-  visibility: visible;
-}
-.no-js #oc-trigger {
-  display: none;
-}
-.no-js .oc-pusher {
-  padding-left: 0;
-}
-
-.no-csstransforms3d .oc-pusher {
-  padding-left: 225px;
-}
-
-/* @end */
-
 /* @group ----- Page and Blocks ----- */
+
+#oc-container {
+    overflow: hidden;
+}
+
+.mm-menu {
+    --mm-color-background: #{$navColor};
+    --mm-color-border: transparent;
+}
+
+.mm-navbar {
+    color: var(--mm-color-text);
+    font-weight: bold;
+}
+
+.mm-listitem--selected > .mm-listitem__text {
+    background: transparent;
+    font-weight: bold;;
+}
 
 #content {
     max-width: 1200px;

@@ -7,9 +7,12 @@ $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1')
 $this->headTitle($siteTitle)->setSeparator(' · ');
 $this->headTitle()->append($this->setting('installation_title', 'Omeka S'));
 $this->headLink()->prependStylesheet($this->assetUrl('css/style.css'));
+$this->headLink()->prependStylesheet($this->assetUrl('css/mmenu.css'));
 $this->headLink()->prependStylesheet($this->assetUrl('css/iconfonts.css', 'Omeka'));
 $this->headLink()->prependStylesheet('//fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic|Bitter:700');
 $this->headScript()->prependFile($this->assetUrl('js/global.js', 'Omeka'));
+$this->headScript()->prependFile($this->assetUrl('js/mmenu.js'));
+$this->headScript()->appendFile($this->assetUrl('js/mmenu-init.js'));
 $this->headScript()->prependFile($this->assetUrl('vendor/jquery/jquery.min.js', 'Omeka'));
 $this->trigger('view.layout');
 $this->jsTranslate();
@@ -56,7 +59,7 @@ $this->htmlElement('body')->appendAttribute('class', 'body-truncate-' . $bodyTru
                     </h1>
                     <?php echo $this->partial('common/search-form'); ?>
                     <div id="oc-trigger">
-                        <button id="menu-button" class="o-icon-menu" data-effect="oc-push" aria-label="<?php echo $this->translate('Menu'); ?>"></button>
+                        <a href="#menu" role="button" id="menu-button" class="o-icon-menu button" data-effect="oc-push" aria-label="<?php echo $this->translate('Menu'); ?>"></a>
                     </div>
                     <nav id="menu" class="oc-menu oc-push" role="navigation">
                         <?php echo $site->publicNav()->menu()->renderMenu(); ?>
@@ -84,6 +87,5 @@ $this->htmlElement('body')->appendAttribute('class', 'body-truncate-' . $bodyTru
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="<?php echo $this->assetUrl('js/offcanvas.js'); ?>"></script>
     </body>
 </html>
