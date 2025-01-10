@@ -9,7 +9,7 @@ $this->headTitle()->append($this->setting('installation_title', 'Omeka S'));
 $this->headLink()->prependStylesheet($this->assetUrl('css/style.css'));
 $this->headLink()->prependStylesheet($this->assetUrl('css/mmenu.css'));
 $this->headLink()->prependStylesheet($this->assetUrl('css/iconfonts.css', 'Omeka'));
-$this->headLink()->prependStylesheet('//fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic|Bitter:700');
+$this->headLink()->prependStylesheet('//fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic%7CBitter:700');
 $this->headScript()->prependFile($this->assetUrl('js/global.js', 'Omeka'));
 $this->headScript()->prependFile($this->assetUrl('js/mmenu.js'));
 $this->headScript()->appendFile($this->assetUrl('js/mmenu-init.js'));
