@@ -378,16 +378,8 @@ header nav a:visited {
     text-indent: -9999px;
     position: relative;
 
-    &:before {
+    .icon:before {
         content: "\f002";
-        font-family: "Font Awesome 5 Free";
-        text-indent: 0;
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        line-height: 1.5 * $base-line-height;
     }
 }
 
@@ -399,11 +391,35 @@ header nav a:visited {
     height: 1.5 * $spacing-l;
     text-align: center;
     font-size: 18px;
+    position: relative;
+
+    .icon:before {
+        font-family: "Font Awesome 5 Free";
+        text-indent: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        line-height: 1.5 * $base-line-height;
+    }
+}
+
+#menu-button .icon:before {
+    content: "\f0c9";
 }
 
 #search-form button {
     border-width: 0px 0px 0px 1px;
     border-radius: 0;
+}
+
+#menu {
+    display: none;
+}
+
+.mm-wrapper--opened #menu {
+    display: block;
 }
 
 .banner {

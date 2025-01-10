@@ -59,7 +59,7 @@ $this->htmlElement('body')->appendAttribute('class', 'body-truncate-' . $bodyTru
                     </h1>
                     <?php echo $this->partial('common/search-form'); ?>
                     <div id="oc-trigger">
-                        <a href="#menu" role="button" id="menu-button" class="o-icon-menu button" data-effect="oc-push" aria-label="<?php echo $this->translate('Menu'); ?>"></a>
+                        <a href="#menu" role="button" id="menu-button" class="button" data-effect="oc-push" title="<?php echo $this->translate('Menu'); ?>"><span class="sr-only"><?php echo $this->translate('Menu'); ?></span><span class="icon" aria-hidden="true"></span></a>
                     </div>
                     <nav id="menu" class="oc-menu oc-push">
                         <?php echo $site->publicNav()->menu()->renderMenu(); ?>
