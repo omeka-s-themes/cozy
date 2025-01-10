@@ -22,11 +22,11 @@
   "homepage": "https://github.com/omeka-s-themes/cozy#readme",
   "devDependencies": {
     "autoprefixer": "^9.2.1",
-    "set-value": ">=4.0.1",
     "gulp": "^5.0.0",
     "gulp-postcss": "^9.0.1",
-    "postcss": "^8.4.31",
     "gulp-sass": "^5.0.0",
+    "postcss": "^8.4.31",
+    "set-value": ">=4.0.1",
     "susy": "^3.0.7"
   },
   "browserslist": [
