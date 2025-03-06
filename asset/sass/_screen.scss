@@ -26,6 +26,12 @@
 }
 
 /* @group ----- Generic HTML elements ----- */
+
+:root,
+.mm-menu--theme-light {
+    --mm-color-icon: rgba(0, 0, 0, 0.67);
+}
+
 * {
     box-sizing: border-box;
 }

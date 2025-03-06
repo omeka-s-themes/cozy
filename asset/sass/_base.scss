@@ -16,6 +16,6 @@ $spacing-l: $base-line-height;
 $light: rgba(0,0,0,.08);
 $gray: #eee;
 $bold: rgba(0,0,0,.15);
-$accent: var(--accent-color, #087b94);
-$defaultNavColor: desaturate(lighten(#087b94, 50%), 60%);
+$accent: var(--accent-color, #006e86);
+$defaultNavColor: desaturate(lighten(#006e86, 50%), 60%);
 $navColor: var(--nav-color, $defaultNavColor);
