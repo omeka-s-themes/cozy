@@ -379,16 +379,6 @@ header nav a:visited {
     border: 0;
 }
 
-#search-form button[type="submit"] {
-    margin-left: 0;
-    text-indent: -9999px;
-    position: relative;
-
-    .icon:before {
-        content: "\f002";
-    }
-}
-
 #search-form button,
 #menu-button {
     border: 1px solid #fff;
@@ -398,6 +388,7 @@ header nav a:visited {
     text-align: center;
     font-size: 18px;
     position: relative;
+    color: #fff;
 
     .icon:before {
         font-family: "Font Awesome 5 Free";
@@ -426,6 +417,10 @@ header nav a:visited {
 
 .mm-wrapper--opened #menu {
     display: block;
+}
+
+.mm-navbar {
+    display: none;
 }
 
 .banner {
