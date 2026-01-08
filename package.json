@@ -1,6 +1,6 @@
 {
   "name": "cozy",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "description": "A theme for Omeka S.",
   "main": "gulpfile.js",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/omeka-s-themes/cozy#readme",
   "devDependencies": {
-    "autoprefixer": "^9.2.1",
+    "autoprefixer": "^10.4.23",
     "gulp": "^5.0.0",
     "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.0.0",
