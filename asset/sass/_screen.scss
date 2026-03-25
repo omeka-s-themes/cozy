@@ -172,7 +172,7 @@ pre {
     .field .field-meta {
         width: 30%;
         text-align: right;
-        padding: $spacing-s $spacing-l 0 0;
+        padding: 0 $spacing-l 0 0;
     }
 
     .required.field .field-meta:after {
@@ -584,6 +584,14 @@ ul.resource-list .resource img ~ * {
 
 /* @group ----- Resource/Show ----- */
 
+.expand,
+.collapse {
+    display: inline-block;
+    min-width: $base-line-height;
+    min-height: $base-line-height;
+    text-align: center;
+}
+
 .expand:after,
 .collapse:after {
     font-family: "Font Awesome 5 Free";
@@ -964,7 +972,7 @@ a.advanced-search {
 
 /* @group ----- Advanced Search ----- */
 
-#advanced-search .inputs .value {
+#advanced-search .inputs .value-content:not(:last-child) {
     margin-bottom: $spacing-m;
 }
 
