@@ -4,6 +4,10 @@ select {
     height: auto;
 }
 
+.field {
+    flex-wrap: wrap;
+}
+
 .field .field-meta,
 .field .inputs {
     width: 100%;

@@ -138,10 +138,6 @@ pre {
         @include button;
     }
 
-    [type="submit"] {
-        margin-left: 30%;
-    }
-
     input[type="checkbox"] {
         margin: 0;
         vertical-align: bottom;
@@ -165,18 +161,24 @@ pre {
 
     .field {
         display: flex;
-        flex-wrap: wrap;
         margin: $spacing-l 0;
+        gap: 0 $spacing-l;
     }
 
     .field .field-meta {
         width: 30%;
         text-align: right;
-        padding: 0 $spacing-l 0 0;
+        padding: $spacing-s 0;
     }
 
-    .required.field .field-meta:after {
-        content: "*";
+    .field label,
+    .field .label {
+        font-weight: bold;
+    }
+
+    .multi-value.field .field-meta {
+        padding-right: 2 * $spacing-l;
+        position: relative;
     }
 
     .field .field-meta .field-description {
@@ -185,12 +187,14 @@ pre {
         font-style: italic;
     }
 
-    .field .inputs {
-        width: 70%;
+    .field .add-value {
+        position: absolute;
+        top: 0;
+        right: 0;
     }
 
-    .field .inputs .value {
-        margin-bottom: $spacing-m;
+    .field .inputs {
+        width: 70%;
     }
 
     /* @end */
@@ -613,10 +617,12 @@ ul.resource-list .resource img ~ * {
 .collapse + .collapsible {
     width: 100%;
     display: block;
-    margin: $spacing-l 0;
+    margin: $spacing-s 0;
+}
+
+.collapsible.annotation {
     padding-left: $spacing-l;
     border-left: 3px solid $gray;
-    overflow: hidden;
 }
 
 .resource-title {
@@ -972,31 +978,17 @@ a.advanced-search {
 
 /* @group ----- Advanced Search ----- */
 
-#advanced-search .inputs .value-content:not(:last-child) {
-    margin-bottom: $spacing-m;
-}
-
 .remove-value.button {
     width: 1.5 * $spacing-l;
     height: 1.5 * $spacing-l;
-    position: relative;
-    margin-left: $spacing-s;
-    text-indent: -9999px;
-
-    &:before {
-        text-indent: 0;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        padding: $spacing-s;
-        line-height: $base-line-height;
-    }
 }
 
 .query-property {
     width: 30%;
+}
+
+#advanced-search [type="submit"] {
+    margin-left: calc(30% + 1rem);
 }
 
 /* @end */
