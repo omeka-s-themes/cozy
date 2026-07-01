@@ -176,21 +176,10 @@ pre {
         font-weight: bold;
     }
 
-    .multi-value.field .field-meta {
-        padding-right: 2 * $spacing-l;
-        position: relative;
-    }
-
     .field .field-meta .field-description {
         font-size: .875 * $base-font-size;
         line-height: .75 * $base-line-height;
         font-style: italic;
-    }
-
-    .field .add-value {
-        position: absolute;
-        top: 0;
-        right: 0;
     }
 
     .field .inputs {
