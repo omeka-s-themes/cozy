@@ -19,3 +19,27 @@ $bold: rgba(0,0,0,.15);
 $accent: var(--accent-color, #006e86);
 $defaultNavColor: desaturate(lighten(#006e86, 50%), 60%);
 $navColor: var(--nav-color, $defaultNavColor);
+
+// Fonts
+
+@mixin font-face(
+    $filename,
+    $family,
+    $style: normal,
+    $weight: 400
+) {
+    @font-face {
+        font-family: $family;
+        font-style: $style;
+        font-weight: $weight;
+        font-display: swap;
+        src: url("../fonts/#{$filename}.woff2") format("woff2"), url("../fonts/#{$filename}.woff") format("woff");
+    }
+}
+
+@include font-face('Lora-Regular', 'Lora');
+@include font-face('Lora-Italic', 'Lora', $style: italic);
+@include font-face('Lora-Bold', 'Lora', $weight: 700);
+@include font-face('Lora-BoldItalic', 'Lora', $style: italic, $weight: 700);
+@include font-face('Bitter-Bold', 'Bitter', $weight: 700);
+@include font-face('Bitter-BoldItalic', 'Bitter', $weight: 700, $style: italic);
